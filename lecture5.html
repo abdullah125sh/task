@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(234, 233, 233);
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    .container{
+         width: 40rem;
+         height: 40rem;
+         background-color: white;
+      border-radius: 10px;
+      
+    }
+    h1{
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 800;
+    }
+    .input-one , .input-two{
+        align-items: center;
+        justify-content: center;
+        
+        display: flex;
+    }
+    input{
+        width: 90%;
+        height: 3rem;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid rgb(22, 123, 123);
+        background-color: transparent;
+        font-size: 1.2rem;
+        text-align: center;
+        margin-top: 20px;
+    }
+    input::placeholder{
+        color:rgb(22, 123, 123); 
+    }
+    .buttons{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        margin-top: 100px;
+        padding: 0px 10px;
+        row-gap: 10px;
+        column-gap: 10px;
+    }
+    button{
+        height: 60px;
+        background-color: rgb(89, 89, 228);
+        border-radius: 5px;
+        color: white;
+        font-size: 1.3rem;
+        border: none;
+    }
+    .screen{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        
+    }
+    .screen input{
+        margin-top: 100px !important;
+        
+    }
+</style>
+<body>
+    <div class="container">
+<h1>Calculator</h1>
+<div class="input-one">
+    <input type="text" name="" id="input-one" placeholder="Enter Value One" required>
+   
+</div>
+<div class="input-two">
+    <input type="text" name="" id="input-two" placeholder="Enter Value Two" required>
+   
+</div>
+<div class="buttons">
+    <button onclick="add()">Addition</button>
+    <button onclick="sub()">Subtration</button>
+    <button onclick="div()">Division</button>
+    <button onclick="mul()">Multiplication</button>
+
+
+</div>
+<div class="screen">
+ <input type="text" id="answer" placeholder="Answer">
+</div>
+    </div>
+    <script>
+        function add(){
+            let InputOne=document.getElementById("input-one").value
+            let InputTwo=document.getElementById("input-two").value
+            let answer=parseInt(InputOne)+parseInt(InputTwo)
+            document.getElementById("answer").value=answer
+        }
+
+        function sub(){
+    let InputOne=document.getElementById("input-one").value;
+    let InputTwo=document.getElementById("input-two").value;
+    let answer=parseInt(InputOne)-parseInt(InputTwo);  
+    document.getElementById("answer").value=answer;
+}
+function mul(){
+    let InputOne=document.getElementById("input-one").value;
+    let InputTwo=document.getElementById("input-two").value;
+    let answer=parseInt(InputOne)*parseInt(InputTwo);  
+    document.getElementById("answer").value=answer;
+}
+function div(){
+    let InputOne=document.getElementById("input-one").value;
+    let InputTwo=document.getElementById("input-two").value;
+    let answer=parseInt(InputOne)/parseInt(InputTwo);  
+    document.getElementById("answer").value=answer;
+}
+      
+    </script>
+</body>
+</html>
